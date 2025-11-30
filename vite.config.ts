@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 
 export default defineConfig({
-  base: "/GIKI-Food-Ordering-System/",   // ✅ REQUIRED FOR GITHUB PAGES
+  base: "/GIKI-Food-Ordering-System/",   // REQUIRED FOR GITHUB PAGES
 
   plugins: [react()],
   resolve: {
@@ -50,10 +50,12 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+
   build: {
     target: 'esnext',
-    outDir: 'build',
+    outDir: 'docs',     // ⭐ CHANGED FROM build → docs (GitHub Pages friendly)
   },
+
   server: {
     port: 3000,
     open: true,
